@@ -24,7 +24,7 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
       <div className="container mx-auto max-w-7xl">
         <div className="relative min-h-[750px] flex items-center justify-center">
           <Card
-            className="absolute top-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            className="absolute top-16 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
             onClick={() => handleCategoryClick("lego")}
           >
@@ -44,7 +44,7 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
           </Card>
 
           <Card
-            className="absolute top-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            className="absolute top-16 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
             onClick={() => handleCategoryClick("round")}
           >
@@ -68,8 +68,8 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
               <img
                 src="https://cdn.poehali.dev/files/aebfb23d-95b0-49fc-9c05-b30a89d1735a.png"
                 alt="i PIXEL BOX Logo"
-                className="w-56 h-56 md:w-72 md:h-72 mx-auto pixel-glow"
-                style={{ filter: "drop-shadow(0 0 40px rgba(139, 92, 246, 0.7))" }}
+                className="w-80 h-80 md:w-[30rem] md:h-[30rem] mx-auto pixel-glow"
+                style={{ filter: "drop-shadow(0 0 50px rgba(139, 92, 246, 0.8))" }}
               />
             </div>
             
