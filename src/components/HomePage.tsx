@@ -20,11 +20,12 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4">
+    <div className="min-h-screen pt-16 pb-12 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="relative min-h-[800px] flex items-center justify-center">
+        <div className="relative min-h-[750px] flex items-center justify-center">
           <Card
-            className="absolute top-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
+            className="absolute top-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            style={{ animationDelay: "0.1s" }}
             onClick={() => handleCategoryClick("lego")}
           >
             <h3 className="text-lg md:text-2xl font-bold text-white text-center">
@@ -33,7 +34,8 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
           </Card>
 
           <Card
-            className="absolute bottom-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-pink-600 to-red-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
+            className="absolute bottom-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-pink-600 to-red-600 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
             onClick={() => handleCategoryClick("coloring")}
           >
             <h3 className="text-lg md:text-2xl font-bold text-white text-center">
@@ -42,7 +44,8 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
           </Card>
 
           <Card
-            className="absolute top-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
+            className="absolute top-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
             onClick={() => handleCategoryClick("round")}
           >
             <h3 className="text-lg md:text-2xl font-bold text-white text-center">
@@ -51,7 +54,8 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
           </Card>
 
           <Card
-            className="absolute bottom-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
+            className="absolute bottom-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-cyan-500 to-blue-500 cursor-pointer hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-500 pixel-border flex items-center justify-center p-4 animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
             onClick={() => handleCategoryClick("square")}
           >
             <h3 className="text-lg md:text-2xl font-bold text-white text-center">
@@ -59,27 +63,28 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
             </h3>
           </Card>
 
-          <div className="relative z-10 text-center px-4">
-            <div className="mb-8">
+          <div className="relative z-10 text-center px-4 -mt-24">
+            <div className="mb-6 animate-scale-in">
               <img
                 src="https://cdn.poehali.dev/files/aebfb23d-95b0-49fc-9c05-b30a89d1735a.png"
                 alt="i PIXEL BOX Logo"
-                className="w-64 h-64 md:w-80 md:h-80 mx-auto pixel-glow"
+                className="w-56 h-56 md:w-72 md:h-72 mx-auto pixel-glow"
                 style={{ filter: "drop-shadow(0 0 40px rgba(139, 92, 246, 0.7))" }}
               />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 gradient-text drop-shadow-lg animate-fade-in" style={{ animationDelay: "0.2s" }}>
               i PIXEL BOX
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground mb-10 drop-shadow-md">
+            <p className="text-xl md:text-2xl text-foreground mb-8 drop-shadow-md animate-fade-in" style={{ animationDelay: "0.4s" }}>
               Профессиональный редактор для создания мозаики
             </p>
             
             <Button
               size="lg"
-              className="text-xl px-10 py-7 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/50 transition-all"
+              className="text-xl px-10 py-7 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/50 hover:scale-105 transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: "0.6s" }}
               onClick={() => onNavigate("editor")}
             >
               Создать мозаику

@@ -51,18 +51,71 @@ const EditorPage = ({ initialMosaicType = "lego" }: EditorPageProps) => {
     setSize(sizes[0]);
   }, [mosaicType, orientation]);
 
+  const getCanvasDimensions = () => {
+    const maxWidth = 625;
+    const maxHeight = 625;
+    const aspectRatio = getAspectRatio();
+
+    let width, height;
+
+    if (orientation === "square") {
+      width = height = Math.min(maxWidth, maxHeight);
+    } else if (orientation === "landscape") {
+      width = maxWidth;
+      height = width / aspectRatio;
+      if (height > maxHeight) {
+        height = maxHeight;
+        width = height * aspectRatio;
+      }
+    } else {
+      height = maxHeight;
+      width = height * aspectRatio;
+      if (width > maxWidth) {
+        width = maxWidth;
+        height = width / aspectRatio;
+      }
+    }
+
+    return { width, height };
+  };
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        setImage(event.target?.result as string);
-        setScale(1);
-        setPosition({ x: 0, y: 0 });
+        const imgSrc = event.target?.result as string;
+        const img = new Image();
+        img.onload = () => {
+          const { width: canvasWidth, height: canvasHeight } = getCanvasDimensions();
+          const scaleX = canvasWidth / img.width;
+          const scaleY = canvasHeight / img.height;
+          const initialScale = Math.max(scaleX, scaleY);
+          
+          setImage(imgSrc);
+          setScale(initialScale);
+          setPosition({ x: 0, y: 0 });
+        };
+        img.src = imgSrc;
       };
       reader.readAsDataURL(file);
     }
   };
+
+  useEffect(() => {
+    if (image) {
+      const img = new Image();
+      img.onload = () => {
+        const { width: canvasWidth, height: canvasHeight } = getCanvasDimensions();
+        const scaleX = canvasWidth / img.width;
+        const scaleY = canvasHeight / img.height;
+        const initialScale = Math.max(scaleX, scaleY);
+        setScale(initialScale);
+        setPosition({ x: 0, y: 0 });
+      };
+      img.src = image;
+    }
+  }, [orientation, mosaicType]);
 
   const handleCanvasClick = () => {
     if (!image) {
@@ -196,15 +249,13 @@ const EditorPage = ({ initialMosaicType = "lego" }: EditorPageProps) => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6">
-          <div className="flex items-center justify-center bg-card rounded-lg p-8 min-h-[400px]">
+          <div className="flex items-center justify-center bg-card rounded-lg p-8 min-h-[650px]">
             <div
               ref={canvasRef}
               className="relative bg-muted/20 pixel-border cursor-pointer overflow-hidden"
               style={{
-                width: orientation === "square" ? "300px" : orientation === "landscape" ? `${300 * getAspectRatio()}px` : "300px",
-                height: orientation === "square" ? "300px" : orientation === "portrait" ? `${300 * getAspectRatio()}px` : "300px",
-                maxWidth: "500px",
-                maxHeight: "500px",
+                width: `${getCanvasDimensions().width}px`,
+                height: `${getCanvasDimensions().height}px`,
               }}
               onClick={handleCanvasClick}
               onWheel={handleWheel}
