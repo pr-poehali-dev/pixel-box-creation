@@ -22,50 +22,50 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
   return (
     <div className="min-h-screen pt-24 pb-12 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="relative min-h-[700px] flex items-center justify-center">
+        <div className="relative min-h-[800px] flex items-center justify-center">
           <Card
-            className="absolute top-0 left-0 w-[45%] h-[45%] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            className="absolute top-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
             onClick={() => handleCategoryClick("lego")}
           >
-            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+            <h3 className="text-lg md:text-2xl font-bold text-white text-center">
               ЛЕГО наборы
             </h3>
           </Card>
 
           <Card
-            className="absolute bottom-0 left-0 w-[45%] h-[45%] bg-gradient-to-br from-pink-600 to-red-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            className="absolute bottom-0 left-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-pink-600 to-red-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
             onClick={() => handleCategoryClick("coloring")}
           >
-            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+            <h3 className="text-lg md:text-2xl font-bold text-white text-center">
               Раскраски
             </h3>
           </Card>
 
           <Card
-            className="absolute top-0 right-0 w-[45%] h-[45%] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            className="absolute top-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
             onClick={() => handleCategoryClick("round")}
           >
-            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+            <h3 className="text-lg md:text-2xl font-bold text-white text-center">
               Круглые стразы
             </h3>
           </Card>
 
           <Card
-            className="absolute bottom-0 right-0 w-[45%] h-[45%] bg-gradient-to-br from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            className="absolute bottom-0 right-0 w-[200px] h-[160px] md:w-[280px] md:h-[200px] bg-gradient-to-br from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-4"
             onClick={() => handleCategoryClick("square")}
           >
-            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+            <h3 className="text-lg md:text-2xl font-bold text-white text-center">
               Квадратные стразы
             </h3>
           </Card>
 
-          <div className="relative z-10 text-center">
+          <div className="relative z-10 text-center px-4">
             <div className="mb-8">
               <img
-                src="https://cdn.poehali.dev/files/c287d062-ca49-4bbe-b7ac-f93f16c5e23c.png"
+                src="https://cdn.poehali.dev/files/aebfb23d-95b0-49fc-9c05-b30a89d1735a.png"
                 alt="i PIXEL BOX Logo"
-                className="w-48 h-48 md:w-56 md:h-56 mx-auto pixel-glow"
-                style={{ filter: "drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))" }}
+                className="w-64 h-64 md:w-80 md:h-80 mx-auto pixel-glow"
+                style={{ filter: "drop-shadow(0 0 40px rgba(139, 92, 246, 0.7))" }}
               />
             </div>
             
