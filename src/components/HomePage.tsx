@@ -21,54 +21,65 @@ const HomePage = ({ onNavigate, onMosaicTypeSelect }: HomePageProps) => {
 
   return (
     <div className="min-h-screen pt-24 pb-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <div className="relative min-h-[600px] flex items-center justify-center">
-          <div className="absolute inset-0 grid grid-cols-2 gap-4 md:gap-8">
-            {categories.map((cat) => {
-              const positionClasses = {
-                "top-left": "row-start-1 col-start-1",
-                "bottom-left": "row-start-2 col-start-1",
-                "top-right": "row-start-1 col-start-2",
-                "bottom-right": "row-start-2 col-start-2",
-              };
+      <div className="container mx-auto max-w-7xl">
+        <div className="relative min-h-[700px] flex items-center justify-center">
+          <Card
+            className="absolute top-0 left-0 w-[45%] h-[45%] bg-gradient-to-br from-purple-600 to-blue-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            onClick={() => handleCategoryClick("lego")}
+          >
+            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+              ЛЕГО наборы
+            </h3>
+          </Card>
 
-              return (
-                <Card
-                  key={cat.id}
-                  className={`${positionClasses[cat.position as keyof typeof positionClasses]} 
-                    bg-gradient-to-br ${cat.gradient} cursor-pointer 
-                    hover:scale-105 transition-transform duration-300 
-                    pixel-border flex items-center justify-center p-4 md:p-8`}
-                  onClick={() => handleCategoryClick(cat.id)}
-                >
-                  <h3 className="text-lg md:text-2xl font-bold text-white text-center">
-                    {cat.label}
-                  </h3>
-                </Card>
-              );
-            })}
-          </div>
+          <Card
+            className="absolute bottom-0 left-0 w-[45%] h-[45%] bg-gradient-to-br from-pink-600 to-red-600 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            onClick={() => handleCategoryClick("coloring")}
+          >
+            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+              Раскраски
+            </h3>
+          </Card>
 
-          <div className="relative z-10 text-center bg-background/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 max-w-lg pixel-border">
-            <div className="mb-6">
+          <Card
+            className="absolute top-0 right-0 w-[45%] h-[45%] bg-gradient-to-br from-yellow-500 to-orange-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            onClick={() => handleCategoryClick("round")}
+          >
+            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+              Круглые стразы
+            </h3>
+          </Card>
+
+          <Card
+            className="absolute bottom-0 right-0 w-[45%] h-[45%] bg-gradient-to-br from-cyan-500 to-blue-500 cursor-pointer hover:scale-105 transition-transform duration-300 pixel-border flex items-center justify-center p-6 md:p-8"
+            onClick={() => handleCategoryClick("square")}
+          >
+            <h3 className="text-xl md:text-3xl font-bold text-white text-center">
+              Квадратные стразы
+            </h3>
+          </Card>
+
+          <div className="relative z-10 text-center">
+            <div className="mb-8">
               <img
                 src="https://cdn.poehali.dev/files/c287d062-ca49-4bbe-b7ac-f93f16c5e23c.png"
                 alt="i PIXEL BOX Logo"
-                className="w-32 h-32 md:w-40 md:h-40 mx-auto pixel-glow"
+                className="w-48 h-48 md:w-56 md:h-56 mx-auto pixel-glow"
+                style={{ filter: "drop-shadow(0 0 30px rgba(139, 92, 246, 0.6))" }}
               />
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 gradient-text">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text drop-shadow-lg">
               i PIXEL BOX
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
+            <p className="text-xl md:text-2xl text-foreground mb-10 drop-shadow-md">
               Профессиональный редактор для создания мозаики
             </p>
             
             <Button
               size="lg"
-              className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              className="text-xl px-10 py-7 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/50 transition-all"
               onClick={() => onNavigate("editor")}
             >
               Создать мозаику
